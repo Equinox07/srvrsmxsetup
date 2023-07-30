@@ -1,0 +1,48 @@
+#!/bin/bash
+sudo wget https://nginx.org/keys/nginx_signing.key
+sudo apt-key add nginx_signing.key
+
+echo "###" | sudo tee -a /etc/apt/sources.list
+echo "deb https://nginx.org/packages/mainline/ubuntu/ bionic nginx" | sudo tee -a /etc/apt/sources.list
+echo "deb-src https://nginx.org/packages/mainline/ubuntu/ bionic nginx" | sudo tee -a /etc/apt/sources.list
+
+sudo apt-get remove nginx-common
+sudo apt-get update
+
+sudo apt-get install curl
+
+echo "deb http://security.ubuntu.com/ubuntu focal-security main" | sudo tee /etc/apt/sources.list.d/focal-security.list
+sudo apt-get update
+sudo apt-get install libssl1.1
+
+sudo apt-get install nginx
+
+sudo rm /etc/apt/sources.list.d/focal-security.list
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo groupadd docker
+
+sudo usermod -aG docker $USER
+
+sudo apt install zip unzip
+
+curl -s "https://get.sdkman.io" | bash
+
+source "/home/ubuntu/.sdkman/bin/sdkman-init.sh"
+
+sdk install java 17.0.6-amzn
+
+sdk install maven 3.8.6
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+
+source ~/.bashrc
+
+nvm install node
+
+nvm install node
+
+npm install -g pm2
