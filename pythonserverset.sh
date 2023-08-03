@@ -5,3 +5,4 @@ libssl-dev libreadline-dev libffi-dev curl software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install libgl1-mesa-glx
 sudo apt-get install python3.9 python3.9-dev python3.9-venv
+sudo apt-get install libmysqlclient-dev libmariadb-dev-compat libmariadb-dev
