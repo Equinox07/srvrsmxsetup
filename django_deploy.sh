@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ssh ubuntu@3.215.162.250 <<EOF
+ssh ubuntu@xx.xx.xxx <<EOF
   cd kycapi
   git pull
   source env/bin/activate
