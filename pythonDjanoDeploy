@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ssh ubuntu@3.215.162.250 <<EOF
+ssh user@xx.xx.xx.xx <<EOF
   cd kapi
   git pull kycapi
   source env/bin/activate
